@@ -1,0 +1,29 @@
+{
+  "name" : "UselessStack",
+  "id" : "007b8971-d1ec-11e3-9c1a-0800200c9a66",
+  "clusters" : [ {
+    "name" : "UselessCluster",
+    "instanceSpec" : {
+      "imageId" : "ami-56a0463e",
+      "type" : "m1.small",
+      "keyName" : "TestKeyPair",
+      "setupScripts" : [ "file://./useless_script.sh" ],
+      "scriptEnvironment" : {
+          "USELESS_PARAM" : "and accomplished absoutely nothing"
+      }
+    },
+    "size" : 1
+  } ],
+  "dataCenter" : "us-east-1a",
+  "ipRuleSet" : {
+    "name" : "ChopTestSecurityGroup",
+    "id" : "05d85ec3-d1ec-11e3-9c1a-0800200c9a66",
+    "inboundRules" : [ {
+      "ipProtocol" : "tcp",
+      "toPort" : 65535,
+      "fromPort" : 0,
+      "ipRanges" : [ "0.0.0.0/0" ]
+    } ],
+    "outboundRules" : [ ]
+  }
+}
